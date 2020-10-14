@@ -149,10 +149,13 @@ try:
     from local_settings import *
 except Exception as e:
     print (e)
+AWS_STORAGE_BUCKET_NAME = os.environ['AWS_STORAGE_BUCKET_NAME']
+AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID']
+AWS_SECRET_ACCESS_KEY = os.environ['AWS_SECRET_ACCESS_KEY']
+AWS_PRELOAD_METADATA = True
 
 if not DEBUG:
-    AWS_STORAGE_BUCKET_NAME = os.environ['AWS_STORAGE_BUCKET_NAME']
-    AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID']
+
     STATICFILES_STORAGE = 'storages.backends.s3boto.S3Boto3Storage'
     DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3Boto3Storage'
     S3_URL = 'https://%s.s3.amazonaws.com/static/' %AWS_STORAGE_BUCKET_NAME
