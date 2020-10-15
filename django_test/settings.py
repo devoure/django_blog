@@ -26,11 +26,12 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 SECRET_KEY = 'w-uhl8bf56gd_i&=6s#8ve7mj8t2j9s1zax-_7rrr1e))w9oyw'
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
-ADMINS = (('Athman Bakari', 'Disguisedsandwich@gmail.com'))
+ADMINS = (('Athman Bakari', 'Disguisedsandwich@gmail.com'),
+          )
 UPLOAD_FILE_PATTERN = "uploaded_files/%s_%s"
 INSTALLED_APPS = [
     'article.apps.ArticleConfig',
@@ -140,13 +141,13 @@ LOGGING = {
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR/ 'static']
-STATIC_ROOT = BASE_DIR/ 'static'
+STATIC_ROOT = BASE_DIR/ 'assets'
 MEDIA_URL = '/assets/'
 MEDIA_ROOT = BASE_DIR/ 'assets'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = "disguisedsandwich@gmail.com"
 try:
-    from local_settings import *
+    from .local_settings import *
 except Exception as e:
     print (e)
 AWS_STORAGE_BUCKET_NAME = os.environ['AWS_STORAGE_BUCKET_NAME']
@@ -159,4 +160,4 @@ if not DEBUG:
     STATICFILES_STORAGE = 'storages.backends.s3boto.S3Boto3Storage'
     DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3Boto3Storage'
     S3_URL = 'https://%s.s3.amazonaws.com/static/' %AWS_STORAGE_BUCKET_NAME
-    STATIC_URL = S3_URl
+    STATIC_URL = S3_URL

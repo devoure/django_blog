@@ -22,7 +22,7 @@ from django.urls import include, path
 from django_test import views as auth_views
 from django_test.forms import ContactForm1, ContactForm2, ContactForm3
 from django_test.views  import ContactWizard
-import settings
+from django_test import settings
 
 admin.autodiscover()
 urlpatterns = [
@@ -47,8 +47,7 @@ urlpatterns = [
 
 
 ]
+#if not settings.DEBUG:
+ #  from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
-if not settings.DEBUG:
-    from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-
-    urlpatterns += staticfiles_urlpatterns()
+  # urlpatterns += staticfiles_urlpatterns()
