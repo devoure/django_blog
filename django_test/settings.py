@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/dev/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/dev/ref/settings/
 """
-
+import django_heroku
 from pathlib import Path
 import os
 #import psycopg2
@@ -162,3 +162,4 @@ if not DEBUG:
     DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3Boto3Storage'
     S3_URL = 'https://%s.s3.amazonaws.com/static/' %AWS_STORAGE_BUCKET_NAME
     STATIC_URL = S3_URL
+django_heroku.settings(locals())
