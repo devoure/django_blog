@@ -146,10 +146,6 @@ MEDIA_URL = '/assets/'
 MEDIA_ROOT = BASE_DIR/ 'assets'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = "disguisedsandwich@gmail.com"
-try:
-    from local_settings import *
-except Exception as e:
-    print (e)
 AWS_STORAGE_BUCKET_NAME = os.environ['AWS_STORAGE_BUCKET_NAME']
 
 
