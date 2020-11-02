@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 SECRET_KEY = 'w-uhl8bf56gd_i&=6s#8ve7mj8t2j9s1zax-_7rrr1e))w9oyw'
 DEBUG = False
 
-ALLOWED_HOSTS = ['first-trialblog.herokuapp.com']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
