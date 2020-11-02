@@ -141,20 +141,20 @@ LOGGING = {
 # https://docs.djangoproject.com/en/dev/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [BASE_DIR/ 'static']
-STATIC_ROOT = BASE_DIR/ 'assets'
+STATICFILES_DIRS = []
+STATIC_ROOT = BASE_DIR/ 'static'
 MEDIA_URL = '/assets/'
 MEDIA_ROOT = BASE_DIR/ 'assets'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = "disguisedsandwich@gmail.com"
-AWS_STORAGE_BUCKET_NAME = os.environ['AWS_STORAGE_BUCKET_NAME']
+#AWS_STORAGE_BUCKET_NAME = os.environ['AWS_STORAGE_BUCKET_NAME']
 
 
 #if not DEBUG:
  #   AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID']
   #  AWS_SECRET_ACCESS_KEY = os.environ['AWS_SECRET_ACCESS_KEY']
-   # AWS_PRELOAD_METADATA = True
-    #STATICFILES_STORAGE = 'storages.backends.s3boto.S3Boto3Storage'
-    # DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3Boto3Storage'
+  #  AWS_PRELOAD_METADATA = True
+  # STATICFILES_STORAGE = 'storages.backends.s3boto.S3Boto3Storage'
+   # DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3Boto3Storage'
    # S3_URL = 'https://%s.s3.amazonaws.com/static/' %AWS_STORAGE_BUCKET_NAME
    # STATIC_URL = S3_URL
